@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurras Frontend App</title>
+    
+    <%- include('./partials/styles.ejs') %> 
+    
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+
+    <%- include('partials/titlebar.ejs') %> 
+
+    <!-- Remainder of the content -->
+    <div class="main">
+
+        <div class="container search">
+
+            <h1 class="title text-center pt-4 mt-5">Aurras</h1> <!-- Used as response from Aurras -->
+            <div class="controls">
+
+                <form class="text-center mt-4">
+                    <div class="form-group">
+                        <img src="../images/icons/search.svg">
+                        <input type="text" class="form-control" id="input" placeholder="Ask Aurras something or submit a command...">
+                    </div>
+                </form>
+                <div class="row pt-3">
+
+                    <div class="col d-flex justify-content-end">
+                        <a href="./prompts.ejs" class="btn btn-primary left"><img src="../images/icons/edit.svg">Edit commands</a>
+                    </div>
+                    <div class="col">
+                        <a href="" class="btn btn-primary right"><img src="../images/icons/edit.svg">Undefined Button</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <%- include('./partials/scripts.ejs') %> 
+    
+</body>
+</html>

@@ -1,0 +1,4 @@
+/app/_data
+/app/node_modules
+/chatbot/data
+/chatbot/wandb

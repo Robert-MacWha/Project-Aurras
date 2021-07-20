@@ -1,0 +1,40 @@
+/* Main search bar */
+.main .search .form-group {
+    background: #ffffff;
+
+    position: relative;
+}
+
+.main .search .form-group img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50px;
+    height: auto;
+
+    padding: 12px;
+
+    z-index: 10;
+}
+
+.main .search .form-group input {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding-left: 46px;
+    padding-right: 46px;
+
+}
+
+
+.main .search .controls .row .col {
+    margin-top: 38px; /* move down by the height of the search bar */
+}
+
+.main .search .controls .row .col img {
+    height: 18px;
+
+    padding-right: 4px;
+}

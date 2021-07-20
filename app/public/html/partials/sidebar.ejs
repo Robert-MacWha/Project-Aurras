@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="../css/sidebar.css">
+<ul class="sidebar list-group">
+
+    <li class="list-group-item list-group-item-action <% if (current=='prompts') { %> active <% } %>"><a href="./prompts.ejs" class="btn">Prompts</a></li>
+    <li class="list-group-item list-group-item-action <% if (current=='intents') { %> active <% } %>"><a href="./intents.ejs" class="btn">Intents</a></li>
+    <li class="list-group-item list-group-item-action <% if (current=='entities') { %> active <% } %>"><a href="./entities.ejs" class="btn">Entities</a></li>
+    <li class="list-group-item list-group-item-action <% if (current=='plugins') { %> active <% } %>"><a href="./plugins.ejs" class="btn">Plugins</a></li>
+
+</ul>

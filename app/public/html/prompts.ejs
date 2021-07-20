@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurras Frontend App</title>
+    
+    <%- include('./partials/styles.ejs') %> 
+    
+    <link rel="stylesheet" href="../css/commands.css">
+</head>
+<body>
+
+    <%- include('partials/titlebar.ejs'); %> 
+
+    <!-- Remainder of the content -->
+    <div class="main">
+
+        <%- include('partials/sidebar.ejs', {current: 'prompts'}) %> 
+
+        <div class="page">
+
+            <!-- Title -->
+            <h1>Train Aurras</h1>
+            <p class="pb-1">Prompts are the commands you give to Aurras when you want her to do something</p>
+
+            <!-- Create a prompt -->
+            <h3>Create a Prompt</h3>
+
+            <form class="pb-4" id="prompts">
+
+                <div class="row pb-2">
+
+                    <div class="col">
+                        <div class="form-group">
+
+                            <label for="intent">Intent</label>
+                            <select name="intent" class="selectpicker intent-picker" id="intent" data-live-search="true">
+                                <% for(const [key, value] of Object.entries(intents)) { %>
+                                    <option value="<%- key %>"><%- value.name %></option>
+                                <% } %>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="form-group">
+
+                            <label for="text">Prompt</label>
+                            <input name="text" type="text" class="form-control" id="text" autofocus="autofocus" onfocus="this.select()" required>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="entity-values"></div>
+
+                <button type="submit" class="btn btn-primary" id="btn-submit">Create Prompt</button>
+
+            </form>
+
+            <!-- Other prompts (specific to the currently selected intent) -->
+            <h3>Prompts</h3>
+            <input class="form-control searchInputs" type="text" placeholder="Search..">
+            <table class="table">
+
+                <thead>
+                    <tr>
+    
+                        <th>Prompt</th>
+                        <th>Intent</th>
+                        <th>Entities</th>
+    
+                    </tr>
+                </thead>
+                <tbody class="commandTable prompt-table"></tbody>
+    
+            </table>
+
+        </div>
+
+    </div>
+
+    <%- include('./partials/scripts.ejs') %> 
+
+    <script>
+        const intents = <%- JSON.stringify(intents) %>;  
+        const entities = <%- JSON.stringify(entities) %>;
+        const prompts = <%- JSON.stringify(prompts) %>;
+    </script>
+    <script src="../js/prompts.js"></script>
+
+    <script src="../js/commands.js"></script>
+    
+</body>
+</html>

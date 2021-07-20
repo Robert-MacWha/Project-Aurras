@@ -1,0 +1,28 @@
+<% 
+if (!Array.isArray(intent.entities)) {
+    intent.entities = [intent.entities];
+} 
+%>
+
+<% if (intent.entities.length != 0) { %>
+<table class="table mb-0 mb-2">
+
+    <thead>
+        <tr>
+            
+            <th>Entity</th>
+            <th>Value</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <% intent.entities.forEach((e) => { %>
+            <tr>
+                <td><%- entities[e].name %></td>
+                <td><input type="text" name="entity-<%- entities[e].id %>" class="form-control px-2 py-1" id="entity-<%- entities[e].id %>" value="null" required></td>
+            </tr>
+        <% }); %>
+    </tbody>
+    
+</table>
+<% } %>

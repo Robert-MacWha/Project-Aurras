@@ -1,0 +1,60 @@
+/*? Variables */
+:root {
+    --titlebar-height: 32px;
+    --titlebar-padding: 4px
+
+    --transition-dur: 0.15s;
+}
+
+/*? All */
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/*? Make room for titlebar */
+.main {
+    height: calc(100vh - var(--titlebar-height));
+    margin-top: var(--titlebar-height);
+    overflow-y: auto;
+
+}
+
+/*? Fix dark theme */
+/* Fix dark on multi-select dropdown */
+.bootstrap-select .btn {
+    background-color: #fff !important;
+}
+
+.bootstrap-select .filter-option-inner-inner {
+    color: #222;
+}
+
+.btn.btn-secondary {
+    color: #fff !important;
+}
+
+/* Scrollbar */
+/*! width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+/*! Track */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.4);
+}
+  
+/*! Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+}
+  
+/*! Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}

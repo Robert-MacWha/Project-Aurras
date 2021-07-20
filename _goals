@@ -1,0 +1,46 @@
+Project Aurras
+
+Speech-To-Text
+- Able to understand when to speak up naturally (IE, no single command to activate, instead able to react to many different commands)
+- Able to 'listen' to spoken word and convert it into text
+- Able to categorize different voices
+
+Natural Language Processing
+- Able to understand and parse commands
+    - Commands are able to interface with external / handmade APIs
+    - Commands are created through an interface, not via code (once build I should never have to interact with it through anything other than the user interface)
+- Able to hold natural conversations without consulting google
+- Able to consult google on facts
+- Able to learn from experiences
+    - Able to be corrected when it preforms the wrong action in response to a prompt
+        - Corrections are made through the user interface
+        - Corrected actions are added to the training files
+    - If not corrected it should assume that it was correct & add it to the training files
+
+Memory
+- Able to add unknown items to memory with context
+    - As an example: Add the name RT to memory with the context that he's a youtuber so it knows to search youtube if I ask 'Has RT posted anything new lately?'
+- Memories will be added through the user interface - '<1> Has RT posted anything? <2> I'm not sure, who's RT? <1> RT gaming is a youtuber <2> Oh, alright.  I understand.'
+
+Text-To-Speech
+- Able to generates a comprehensible human voice from text
+- Able to change the style of the voice using small amounts of training data (I can change it to sound like someone else easily enough)
+
+In-depth structure
+[Natural Language Processing]
+- NLP is made of a few different modes
+    - Direct commands
+        - Direct commands (turn on the lights, add an event to my calender, learn this new phrase, etc)
+    - Contextual commands
+        - Mainly questions, draws heavily from the memory for context
+    - Conversational commands (low priority)
+        - Natural conversation.  Able to talk to Aurras and get options / advice from her.
+
+- The system needs to be able to
+    - Parse intent, must be able to handel multiple keywords in a single sentence - (Hey Aurras, what's the weather -> search: weather | Hey Aurras, what's it like in Toronto? -> search: weather, details: toronto)
+    - Convert sentence outlines into unique sentences - (basically opposite of intent parsing (named greeting -> Hey robert, how are you doing?))
+    - Make idle conversation - (When were you created Aurras) 
+
+- To do this the system will have the following portions
+    - A broad intent-classification system which will use text embeddings to determine the broad meaning of sentence - (text representation https://simpletransformers.ai/docs/sentence-pair-classification/ and distance)
+    - A narrow feature-extracting system which will extract from the sentence related features given the intent ('what is the weather in ottawa?' intent: weather, data: ottawa) - (Question answering model https://simpletransformers.ai/docs/qa-specifics/)

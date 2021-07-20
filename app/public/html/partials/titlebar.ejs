@@ -1,0 +1,51 @@
+<!-- Custom title bar -->
+
+<link rel="stylesheet" href="../css/titlebar.css">
+<div class="titlebar bg-primary text-dark">
+
+    <div class="drag-region">
+
+        <div class="window-toolbar">
+            <ul>
+
+                <li class="dropdown file-dropdown">
+
+                    <button class="dropdown-toggle btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">File</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                        <a class="btn dropdown-item" href="./index.ejs">Home</a>
+                        <a class="btn dropdown-item" href="./prompts.ejs">Commands</a>
+                        <div class="dropdown-divider"></div>
+
+                    </div>
+
+                </li>
+                <li class="dropdown edit-dropdown">
+
+                    <button class="dropdown-toggle btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="window-title text-light fw-bold">
+            <p>Project Aurras</p>
+        </div>
+
+        <div class="window-controls">
+
+            <div class="btn btn-min" id="btn-min"><img src="../images/icons/minimze.svg" class="icon"></div>
+            <div class="btn btn-max" id="btn-max"><img src="../images/icons/maximize.svg" class="icon"></div>
+            <div class="btn btn-exit" id="btn-exit"><img src="../images/icons/close.svg" class="icon"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/titlebar.js"></script>

@@ -18,15 +18,10 @@ let mainWindow;
 function createWindow () {
 
     mainWindow = new BrowserWindow({
-        width: 1000,
-        height: 600,
         minWidth: 900,
         minHeight: 600,
         frame: false,
         webPreferences: {
-            nodeIntegration: false, // is default value after Electron v5
-            contextIsolation: true, // protect against prototype pollution
-            enableRemoteModule: false, // turn off remote
             preload: path.join(app.getAppPath(), 'preload.js') // use a preload script
           }
     });

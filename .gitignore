@@ -2,3 +2,6 @@
 /app/node_modules
 /chatbot/data
 /chatbot/wandb
+/chatbot/models
+/chatbot/__pycache__
+/chatbot/intent_classifier.png

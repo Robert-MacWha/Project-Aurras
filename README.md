@@ -22,4 +22,4 @@ Planned components:
 ### GPT for conversational interactions
 
 
-![Alt Text](_git-resources\Sample.gif)
+![Alt Text](_git-resources/Sample.gif)

@@ -11,3 +11,15 @@ Intent classification is how Aurras understands what you want her to do.  Intent
 
 ### Entity Extraction
 Entity extraction is how Aurras picks up on information relating to your intents.  Entity extraction is done by using the distilbert-base-uncased transformer to classify individual tokens.  Whether it be understanding what colour to set your lights to, or when you want the weather for (I said saturday, not thursday you dimwit!). See my article on [Entity Extraction]() for a full guide on how she does it.
+
+Components in development:
+
+### Text-To-Speech
+### Speech-To-Text
+
+Planned components:
+
+### GPT for conversational interactions
+
+
+![Alt Text](./_git-resources\Sample.gif)

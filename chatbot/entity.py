@@ -1,5 +1,3 @@
-
-#! TODO: fix the entity_labels file so it starts at 0 instead of 1 (because of the prepend_requests.um_entity file)
 import os
 
 class Entity:

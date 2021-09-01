@@ -1,8 +1,8 @@
 #? following https://github.com/m2dsupsdlclass/lectures-labs/blob/master/labs/06_deep_nlp/Transformers_Joint_Intent_Classification_Slot_Filling_rendered.ipynb
 
 import os
-import random
 import itertools
+import sys
 
 class Intent:
     def __init__(self, file, name, entities):
@@ -23,10 +23,16 @@ class Intent:
 
                 if s.startswith('{'):
                     
-                    entity_name = s[1:-1]
-                    entity_samples = entities[entity_name].labled_samples
+                    try:
+                        entity_name = s[1:-1]
+                        entity_samples = entities[entity_name].labled_samples
 
-                    subsections[i] = entity_samples
+                        subsections[i] = entity_samples
+                    
+                    except:
+                        print(f'FATAL ERROR: Entity {s[1:-1]} in intent {file} does not exist')
+                        print(f' - Script failed on intent "{c}"')
+                        sys.exit()
 
                 else:
                     subsections[i] = [[(s, 0)]]

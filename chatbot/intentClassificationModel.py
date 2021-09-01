@@ -45,13 +45,21 @@ def build_intent_classification_model(intent_class_count, entity_class_count, ma
 
     # the slot-filling layer needs to cover the entire range of the hidden state
     entity_output = tf.keras.layers.Dense(
+        256,
+        activation='relu',
+        kernel_initializer=weight_initializer,
+        kernel_constraint=None,
+        bias_initializer='zeros'
+    )(last_hidden_state)
+
+    entity_output = tf.keras.layers.Dense(
         entity_class_count,
         activation='softmax',
         kernel_initializer=weight_initializer,
         kernel_constraint=None,
         bias_initializer='zeros',
         name='entity_output'
-    )(last_hidden_state)
+    )(entity_output)
 
     # the cls token contains a condensed representation of the entire last_hidden_state tensor
     cls_token = last_hidden_state[:, 0, :]

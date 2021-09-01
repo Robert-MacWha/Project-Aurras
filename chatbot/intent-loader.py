@@ -10,8 +10,8 @@ entities, entity_lables = load_Entities('./data/entities')
 intents, intent_lables  = load_Intents('./data/intents', entities)
 
 #* extract the specified number of training and testing samples
-train_count = 500
-val_ratio   = 0.01
+train_count = 256
+val_ratio   = 0.05
 
 intent_train = []
 intent_val   = []

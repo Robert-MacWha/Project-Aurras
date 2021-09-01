@@ -20,7 +20,7 @@ from intentClassificationModel import build_intent_classification_model, classif
 #* hyperparameters
 MODEL_NAME = 'distilbert-base-uncased'
 MAX_LENGTH = 128
-EPOCHS = 1
+EPOCHS = 3
 BATCH_SIZE = 16
 
 #* create the tokenizer
@@ -68,6 +68,10 @@ model.compile(optimizer = tf.keras.optimizers.Adam(learning_rate=5e-5),
 history = model.fit(
     x = [x_train_ids, x_train_attention],
     y = [y_train_intents, y_train_entities],
+    validation_data = (
+        [x_val_ids, x_val_attention],
+        [y_val_intents, y_val_entities]
+        ),
     epochs = EPOCHS,
     batch_size = BATCH_SIZE,
     verbose = 1
@@ -78,7 +82,7 @@ model.save_weights('./models/model_weights') # load the pre-trained model by cre
 
 #* test the model
 while True:
-    prompt = input(f'Enter a prompt in one of the following classes: {list(intent_labels.values())}: ')
+    prompt = input(f'Talk to Aurras: ')
 
     classification = classify(prompt, tokenizer, model, intent_labels, entity_labels)
     print(f'classification is: {classification}')

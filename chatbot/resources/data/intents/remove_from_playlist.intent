@@ -1,0 +1,5 @@
+[prepend_request] remove this song from my playlist
+[prepend_request] remove {song} from my playlist
+[prepend_request] remove {song} from my {playlist} playlist
+[prepend_request] delete this song from my playlist
+[prepend_request] take this song out of my {playlist} playlist

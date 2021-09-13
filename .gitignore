@@ -1,7 +1,6 @@
-/app/_data
-/app/node_modules
-/chatbot/data
+/chatbot/resources/data/train.csv
+/chatbot/resources/data/val.csv
 /chatbot/wandb
-/chatbot/models
+/chatbot/resources/models
 /chatbot/__pycache__
-/chatbot/intent_classifier.png
+/chatbot/resources/intent_classifier.png

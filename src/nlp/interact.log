@@ -1,0 +1,16 @@
+2021-10-08 20:30:10,365 AutoGraph could not transform <bound method StreamWrapper.write of <colorama.ansitowin32.StreamWrapper object at 0x000001762C146A60>> and will run it as-is.
+Cause: mangled names are not yet supported
+To silence this warning, decorate the function with @tf.autograph.experimental.do_not_convert
+2021-10-08 20:30:09,758 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-08 20:30:10,526 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
+2021-10-08 20:30:10,752 From C:\Users\trebo\miniconda3\envs\aurras\lib\site-packages\tensorflow\python\ops\array_ops.py:5043: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
+Instructions for updating:
+The `validate_indices` argument has no effect. Indices are always validated on CPU and never validated on GPU.
+2021-10-08 20:30:13,529 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-08 20:30:13,571 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
+2021-10-08 20:30:16,068 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-08 20:30:16,102 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
+2021-10-08 20:30:17,834 Loaded plugin DATETIME
+2021-10-08 20:30:17,938 Loaded plugin NOTION
+2021-10-08 20:30:17,943 Loaded plugin WEATHER
+2021-10-08 20:30:17,945 Loaded plugin TEMPLATE

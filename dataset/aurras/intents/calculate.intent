@@ -1,0 +1,14 @@
+what's {number} plus {number}
+what's {number} minus {number}
+what's {number} times {number}
+what's {number} divided by {number}
+what's {number} to the power of {number}
+{prepend_request} calculate {number} plus {number}
+{prepend_request} calculate {number} minus {number}
+{prepend_request} calculate {number} times {number}
+{prepend_request} calculate {number} divided by {number}
+{prepend_request} calculate {number} to the power of {number}
+{prepend_request} calculate {number} root {number} 
+what is the square root of {number}
+what is the cube root of {number}
+what is {number} root four

@@ -1,0 +1,10 @@
+{prepend_request} Add this song to the playlist
+{prepend_request} add this to my playlist
+{prepend_request} save this song to my playlist
+{prepend_request} add this album to my playlist
+{prepend_request} add {song} to my playlist
+{prepend_request} save this song to my {playlist} playlist
+{prepend_request} add this to my {playlist} playlist
+{prepend_request} add the song {song} to my {playlist} playlist
+{prepend_request} put {song} into my {playlist} playlist
+{prepend_request} put the song {song} into {playlist}

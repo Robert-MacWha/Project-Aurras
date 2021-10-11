@@ -1,6 +1,8 @@
-/chatbot/resources/data/train.csv
-/chatbot/resources/data/val.csv
-/chatbot/wandb
-/chatbot/resources/models
-/chatbot/__pycache__
-/chatbot/resources/intent_classifier.png
+*/__pycache__
+**/__pycache__
+/src/nlp/model
+/dataset/train.pkl
+/plugins/aurras/weather_key.py
+/plugins/weather/key.py
+/plugins/notion/token.py
+/src/interactions/calendar/credentials.json

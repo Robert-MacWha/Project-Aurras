@@ -1,0 +1,7 @@
+What's the weather?
+{prepend_request} give me the weather right now
+{prepend_request} get the forecast
+{prepend_request} locate the forecast for the next {amount_of_time}
+{prepend_request} tell me what the weather will be over the next {amount_of_time}
+{prepend_request} get the weather for {datetime}
+{prepend_request} find me forecast for {datetime}

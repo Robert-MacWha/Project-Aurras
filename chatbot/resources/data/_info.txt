@@ -1,2 +1,0 @@
-.entity files comprise labeled entities which are classified by the model
-.intent files are intents which use entities and um_entities to add variation

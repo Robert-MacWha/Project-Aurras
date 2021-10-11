@@ -1,4 +1,0 @@
-[prepend_request] fast forward by {amount_of_time}
-[prepend_request] skip {amount_of_time}
-[prepend_request] fast forward {amount_of_time}
-[prepend_request] skip {amount_of_time} on this song

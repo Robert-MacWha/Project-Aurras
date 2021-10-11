@@ -4,22 +4,24 @@ Project Aurras is a virtual assistant I am building using intent classification 
 2. Be able to hold natural conversation
 3. Be able to interact with extral APIs (IE turning on lights)
 
-## Currently Project Aurras has two components, with two more being developed.
+Here's a board showing all of the features I have planned for aurras:
+[Public Micro Mindmap](https://miro.com/app/board/o9J_ltb8idc=/?invite_link_id=397704406891)
+And here's a notion board used to keep track of features:
+[Public notion page](https://www.notion.so/Project-Aurras-4a0a0059519f47769a94247117a41c50)
 
-### Intent Classification
-Intent classification is how Aurras understands what you want her to do.  Intent classification is done by using the distilbert-base-uncased transformer and categorica classification on its output.  By analyzing sentences she classifies each prompt into a single intent.  Then, based on this intent, she can preform different actions.  See my article on [intent classification](https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-2-afb26c2a3b5b) for a full guide on how she does it.
+## Features
 
-### Entity Extraction
-Entity extraction is how Aurras picks up on information relating to your intents.  Entity extraction is done by using the distilbert-base-uncased transformer to classify individual tokens.  Whether it be understanding what colour to set your lights to, or when you want the weather for (I said saturday, not thursday you dimwit!). See my article on [Entity Extraction]() for a full guide on how she does it.
+### Natural language processing
+As a personal virtual assistant, Aurras should be able to understand a given natural language prompt.  This is accomplished using a fine-tuned branch of [distilbert-base-uncased](https://huggingface.co/distilbert-base-uncased) which was trained to extract intents and entities.  Intents tell Aurras what you want to accomplish with a given sentence, and entities give her information to help fufill the intent.
 
-Components in development:
+### Skills
+Once natural language has been processed, the intent and entities are given to a plugin which (a) executes commands and (b) returns a response.  More nuanced responses are planned, but at the moment plugins can only respond with a single string output.  
 
-### Text-To-Speech
-### Speech-To-Text
+An example skill count be a weather API which responds to the get_weather intent.  This api might look up the weather and return it in plain text.  It might also have a special case if a datetime entitiy is located, where it returns the weather for the provided date instead of the current date.  More complex skills require more complex interactions, but fundementally they should allways be self-contained plugins.
 
-Planned components:
+### Interactions
+Interactions are programs included with Aurras that allow plugins to interact with more complex external APIs.  An example of this might be the duckling API which is used to convert natural language into concrete measures.  Instead of each plugin handeling duckling by itself, all traffic is routed through the duckling interaction manager which significantly decreases overhead.
 
-### GPT for conversational interactions
+## Goals
 
-
-![Alt Text](_git-resources/Sample.gif)
+My goal for project Aurras is to build a virtual assistant framework which I can use as a jumping-off point for future projects.  This means that interactions & natural language processing systems will be completely fleshed out while skills will likely remain lacking in quality, at least in the main branch.

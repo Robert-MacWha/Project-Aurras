@@ -5,8 +5,11 @@ Project Aurras is a virtual assistant I am building using intent classification 
 3. Be able to interact with extral APIs (IE turning on lights)
 
 Here's a board showing all of the features I have planned for aurras:
+
 [Public Micro Mindmap](https://miro.com/app/board/o9J_ltb8idc=/?invite_link_id=397704406891)
+
 And here's a notion board used to keep track of features:
+
 [Public notion page](https://www.notion.so/Project-Aurras-4a0a0059519f47769a94247117a41c50)
 
 ## Features

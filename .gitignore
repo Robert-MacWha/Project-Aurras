@@ -5,3 +5,4 @@
 /plugins/weather/key.py
 /plugins/notion/token.py
 /src/interactions/calendar/credentials.json
+/dataset/train.pkl

@@ -129,6 +129,7 @@ def generate_dataset(samples_per_intent=512, duplicates=False):
     # save the dataset
     df = pd.DataFrame(dataset)
     df.to_pickle('dataset/train.pkl')
+    df.to_csv('dataset/train.csv')
     pd.DataFrame(dataset[::200]).to_csv('dataset/sample.csv', index=False)
 
     with open('dataset/intent_labels.json', 'w') as f:

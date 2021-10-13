@@ -1,7 +1,6 @@
 */__pycache__
 **/__pycache__
 /src/nlp/model
-/dataset/train.pkl
 /plugins/aurras/weather_key.py
 /plugins/weather/key.py
 /plugins/notion/token.py

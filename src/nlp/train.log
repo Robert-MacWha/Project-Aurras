@@ -1,24 +1,23 @@
-2021-10-03 10:32:01,329 not enough "converse" intents were generated from templates.  Limiting number of samples to 90
-2021-10-03 10:32:01,339 not enough "get_alarms" intents were generated from templates.  Limiting number of samples to 43
-2021-10-03 10:32:01,339 not enough "get_date" intents were generated from templates.  Limiting number of samples to 32
-2021-10-03 10:32:01,340 not enough "get_music_info" intents were generated from templates.  Limiting number of samples to 33
-2021-10-03 10:32:01,340 not enough "get_time" intents were generated from templates.  Limiting number of samples to 43
-2021-10-03 10:32:01,340 not enough "get_todos" intents were generated from templates.  Limiting number of samples to 41
-2021-10-03 10:32:01,342 not enough "pause_music" intents were generated from templates.  Limiting number of samples to 40
-2021-10-03 10:32:01,344 not enough "previous_music" intents were generated from templates.  Limiting number of samples to 41
-2021-10-03 10:32:01,346 not enough "resume_music" intents were generated from templates.  Limiting number of samples to 30
-2021-10-03 10:32:01,349 not enough "skip_music" intents were generated from templates.  Limiting number of samples to 51
-2021-10-03 10:32:01,349 not enough "stop" intents were generated from templates.  Limiting number of samples to 61
-2021-10-03 10:32:06,228 AutoGraph could not transform <bound method StreamWrapper.write of <colorama.ansitowin32.StreamWrapper object at 0x0000027228138610>> and will run it as-is.
+2021-10-12 20:51:56,988 not enough "converse" intents were generated from templates.  Limiting number of samples to 90
+2021-10-12 20:51:56,996 not enough "get_alarms" intents were generated from templates.  Limiting number of samples to 43
+2021-10-12 20:51:56,996 not enough "get_date" intents were generated from templates.  Limiting number of samples to 32
+2021-10-12 20:51:56,998 not enough "get_music_info" intents were generated from templates.  Limiting number of samples to 33
+2021-10-12 20:51:56,998 not enough "get_time" intents were generated from templates.  Limiting number of samples to 43
+2021-10-12 20:51:56,998 not enough "get_todos" intents were generated from templates.  Limiting number of samples to 41
+2021-10-12 20:51:56,999 not enough "pause_music" intents were generated from templates.  Limiting number of samples to 40
+2021-10-12 20:51:57,001 not enough "previous_music" intents were generated from templates.  Limiting number of samples to 41
+2021-10-12 20:51:57,003 not enough "resume_music" intents were generated from templates.  Limiting number of samples to 30
+2021-10-12 20:51:57,006 not enough "skip_music" intents were generated from templates.  Limiting number of samples to 51
+2021-10-12 20:51:57,006 not enough "stop" intents were generated from templates.  Limiting number of samples to 61
+2021-10-12 20:52:03,884 AutoGraph could not transform <bound method StreamWrapper.write of <colorama.ansitowin32.StreamWrapper object at 0x000001B3CDD79670>> and will run it as-is.
 Cause: mangled names are not yet supported
 To silence this warning, decorate the function with @tf.autograph.experimental.do_not_convert
-2021-10-03 10:32:05,683 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
-2021-10-03 10:32:06,373 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
-2021-10-03 10:32:06,537 From C:\Users\trebo\miniconda3\envs\aurras\lib\site-packages\tensorflow\python\ops\array_ops.py:5043: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
+2021-10-12 20:52:03,271 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-12 20:52:04,045 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
+2021-10-12 20:52:04,217 From C:\Users\trebo\miniconda3\envs\aurras\lib\site-packages\tensorflow\python\ops\array_ops.py:5043: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
 Instructions for updating:
 The `validate_indices` argument has no effect. Indices are always validated on CPU and never validated on GPU.
-2021-10-03 10:32:11,730 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
-2021-10-03 10:32:11,765 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
-2021-10-03 10:32:13,573 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
-2021-10-03 10:32:13,607 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
-2021-10-03 10:35:20,860 {"loss": [0.2404390424489975, 0.002648147288709879], "intent_output_loss": [0.17177675664424896, 0.0010026342933997512], "entity_output_loss": [0.06866234540939331, 0.001645512762479484], "intent_output_categorical_accuracy": [0.9546461701393127, 1.0], "entity_output_categorical_accuracy": [0.9846662282943726, 0.9997057318687439]}
+2021-10-12 20:52:09,466 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-12 20:52:09,501 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
+2021-10-12 20:52:11,351 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-12 20:52:11,385 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.

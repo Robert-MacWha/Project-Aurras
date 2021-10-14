@@ -1,8 +1,0 @@
-How far is it to {location}
-How far away is {location}
-How far are we from {location}
-{prepend_request} tell me the distance to {location}
-{prepend_request} tell me how far we are from {location}
-{prepend_request} give me {location} 's distance
-{prepend_request} google the distance to {location}
-{prepend_request} find the distance to {location}

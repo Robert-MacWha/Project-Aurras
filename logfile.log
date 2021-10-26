@@ -1,0 +1,9 @@
+2021-10-25 12:55:26,818 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-25 12:55:27,559 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
+2021-10-25 12:55:27,706 From C:\Users\trebo\miniconda3\envs\aurras\lib\site-packages\tensorflow\python\ops\array_ops.py:5043: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
+Instructions for updating:
+The `validate_indices` argument has no effect. Indices are always validated on CPU and never validated on GPU.
+2021-10-25 12:55:32,161 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-25 12:55:32,182 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.
+2021-10-25 12:55:34,021 The parameters `output_attentions`, `output_hidden_states` and `use_cache` cannot be updated when calling a model.They have to be set to True/False in the config object (i.e.: `config=XConfig.from_pretrained('name', output_attentions=True)`).
+2021-10-25 12:55:34,043 The parameter `return_dict` cannot be set in graph mode and will always be set to `True`.

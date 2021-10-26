@@ -1,13 +1,6 @@
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-
-import transformers
-transformers.logging.set_verbosity_error()
-
 import json
 import pandas as pd
 import tensorflow as tf
-import logging
 from transformers import TFDistilBertModel, DistilBertTokenizerFast
 from .prompt_processing import encode, encode_without_labels
 
@@ -32,10 +25,6 @@ class Model:
         self.entity_class_count = len(self.entity_labels)
         self.padding = padding
         self.debug = debug
-
-        logging.getLogger(__name__)
-        self.logger = logging.getLogger()
-        self.logger.setLevel(logging.INFO)
 
         if build:
             self.build_model()
@@ -103,7 +92,7 @@ class Model:
                            metrics   = tf.keras.metrics.CategoricalAccuracy('categorical_accuracy'))
 
         if self.debug:
-            tf.keras.utils.plot_model(self.model, to_file='src/nlp/nlp_model_plot.png', show_shapes=True, show_layer_names=True)
+            tf.keras.utils.plot_model(self.model, to_file='aurras/nlp/nlp_model_plot.png', show_shapes=True, show_layer_names=True)
     
     def train(self, dataset_path, epochs=2, batch_size=16):
         """
@@ -140,7 +129,7 @@ class Model:
         )
         
         if self.debug:
-            self.logger.info(f'{json.dumps(history.history)}')
+            print(f'{json.dumps(history.history)}')
 
     def load_model(self, model_path, model_name='distilbert-base-uncased'):
         """
@@ -161,7 +150,7 @@ class Model:
         try:
             self.model.load_weights(model_path)
         except:
-            self.logger.error('Pre-trained model was not found.  Before loading a model make sure a pre-trained one exists in the model directory')
+            print('Pre-trained model was not found.  Before loading a model make sure a pre-trained one exists in the model directory')
 
     def save_model(self, model_path='src/nlp/model/pretrained'):
         """

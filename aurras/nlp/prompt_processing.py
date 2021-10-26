@@ -1,5 +1,4 @@
 import numpy as np
-import tensorflow as tf
 
 def encode(tokenizer, texts, texts_labels, max_len=128):
     """

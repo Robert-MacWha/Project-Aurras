@@ -1,16 +1,9 @@
-import logging
-import json
-from src.nlp.model import Model
-from src.plugins.pluginmanager import PluginManager
-
-# preperation
-logging.basicConfig(filename="src/nlp/interact.log",
-                    format='%(asctime)s %(message)s',
-                    filemode='w')
+from aurras.nlp.model import Model
+from aurras.plugins.pluginmanager import PluginManager
 
 nlp_model = Model('dataset/intent_labels.json', 'dataset/entity_labels.json', debug=False)
 nlp_model.build_model()
-nlp_model.load_model('src/nlp/model/pretrained')
+nlp_model.load_model('model/pretrained')
 
 plugin_manager = PluginManager()
 

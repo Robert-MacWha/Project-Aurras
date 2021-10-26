@@ -1,4 +1,3 @@
-import logging
 import os
 import json
 import random
@@ -26,12 +25,8 @@ def generate_dataset(samples_per_intent=512, duplicates=False):
          - train.pkl: Full training dataset
     """
 
-    logging.getLogger(__name__)
-    logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
-
     if not os.path.isdir(DATASET_PATH):
-        logging.error('Dataset directory does not exist')
+        print('Dataset directory does not exist')
         return
 
     # load data from file
@@ -113,7 +108,7 @@ def generate_dataset(samples_per_intent=512, duplicates=False):
         # sample the category for prompts
         if not duplicates and len(generated_prompts[category]) < samples_per_intent:
             samples = generated_prompts[category]
-            logger.warn(f'not enough "{category}" intents were generated from templates.  Limiting number of samples to {len(generated_prompts[category])}')
+            print(f'not enough "{category}" intents were generated from templates.  Limiting number of samples to {len(generated_prompts[category])}')
         else:
             samples = random.choices(generated_prompts[category], k=samples_per_intent)
 

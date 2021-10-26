@@ -1,8 +1,2 @@
-*/__pycache__
-**/__pycache__
-/src/nlp/model
-/plugins/aurras/weather_key.py
-/plugins/weather/key.py
-/plugins/notion/token.py
-/src/interactions/calendar/credentials.json
-/dataset/train.pkl
+/_git-resources
+/model

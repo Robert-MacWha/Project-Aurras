@@ -12,6 +12,11 @@ And here's a notion board used to keep track of features:
 
 [Public notion page](https://www.notion.so/Project-Aurras-4a0a0059519f47769a94247117a41c50)
 
+I've also written two articles on the topic for medium:
+
+- https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-2-afb26c2a3b5b
+- https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-1-b73974f80c1
+
 ## Features
 
 ### Natural language processing

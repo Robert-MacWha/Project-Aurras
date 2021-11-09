@@ -14,8 +14,8 @@ And here's a notion board used to keep track of features:
 
 I've also written two articles on the topic for medium:
 
-- https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-2-afb26c2a3b5b
-- https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-1-b73974f80c1
+- [Building a personal virtual assistant - Part 1](https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-2-afb26c2a3b5b)
+- [Building a personal virtual assistant - Part 2](https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-1-b73974f80c1)
 
 ## Features
 

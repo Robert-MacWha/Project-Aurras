@@ -1,0 +1,19 @@
+Implement a system similar to wit.ai's for dataset generation (replacing the intent and entities dirs) so that it can become more flexible
+Implement traits in the datasets and data processing pipeline
+Simplify the entire API into a single class (Aurras) which contains all required functions
+Implement Aurras' functions
+ - Initialization
+ - Create the dataset
+    - Load the raw data
+    - Create the dataset
+    - Save the dataset
+ - Load the dataset
+ - Train a model
+    - Create the model
+    - Train the model
+    - Save the model
+ - Load a model
+ - Respond to a prompt
+ - Respond to a conversation
+ - Parse speech
+ - Generate speech

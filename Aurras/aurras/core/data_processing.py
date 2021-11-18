@@ -6,9 +6,6 @@ import glob
 import pandas as pd
 from pathlib import Path
 
-#TODO: implement traits in the datasets and data processing pipeline
-#TODO: Implement a system similar to wit.ai's for dataset generation (replacing the intent and entities dirs) so that it can become more flexible
-
 def generate_dataset(dataset_path, samples_per_intent=512, duplicates=False):
     """
         Generate the dataset from .entity and .intent files in the dataset directory.

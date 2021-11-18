@@ -5,7 +5,7 @@ from transformers import TFDistilBertModel, DistilBertTokenizerFast
 from .prompt_processing import encode, encode_without_labels
 
 class Model:
-    def __init__(self, intent_labels_path, entity_labels_path, padding=128, build=True, debug=False):
+    def __init__(self, intent_labels_path, entity_labels_path, padding, build=False, debug=False):
 
         """
             Initialize the model class
@@ -29,7 +29,7 @@ class Model:
         if build:
             self.build_model()
 
-    def build_model(self, model_name='distilbert-base-uncased', random_seed=42):
+    def build_model(self, model_name, random_seed=42):
         """
             Builds the intent and sequence classification model with keras' model API.
 
@@ -131,28 +131,24 @@ class Model:
         if self.debug:
             print(f'{json.dumps(history.history)}')
 
-    def load_model(self, model_path, model_name='distilbert-base-uncased'):
+    def load_model(self, model_path, model_name):
         """
             Load in a pre-trained model
 
             Inputs:
              - model_path: Path to the weights of the pre-trained model
              - model_name: The huggingface transformer to use.  Distilbert-base-uncased is recommended
-
-            Outputs:
-             - saves the uncompiled model to the class
+             
         """
 
         # build the model
         self.build_model(model_name)
 
         # load in the pre-trained weights
-        try:
-            self.model.load_weights(model_path)
-        except:
-            print('Pre-trained model was not found.  Before loading a model make sure a pre-trained one exists in the model directory')
+        #? errors will often arise if the pre-trained weights do not exist
+        self.model.load_weights(model_path)
 
-    def save_model(self, model_path='src/nlp/model/pretrained'):
+    def save_model(self, model_path):
         """
             Save the model's weights to a directory
 

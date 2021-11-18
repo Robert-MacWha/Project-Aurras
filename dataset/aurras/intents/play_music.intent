@@ -1,4 +1,0 @@
-{prepend_request} play {song}
-{prepend_request} play {song} by {person}
-{prepend_request} play some songs by {person}
-{prepend_request} play some {music_genre} songs

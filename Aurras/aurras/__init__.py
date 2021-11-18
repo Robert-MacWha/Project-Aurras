@@ -9,4 +9,7 @@ logging.basicConfig(filename="logfile.log",
                     format='%(asctime)s %(message)s',
                     filemode='w')
 
-from .aurras import *
+""" 
+    TODO
+        - build a single aurras.py file to consolidate all the different module components
+"""

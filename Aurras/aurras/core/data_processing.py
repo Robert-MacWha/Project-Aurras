@@ -6,15 +6,15 @@ import glob
 import pandas as pd
 from pathlib import Path
 
-DATASET_PATH = 'dataset'
-
 #TODO: implement traits in the datasets and data processing pipeline
+#TODO: Implement a system similar to wit.ai's for dataset generation (replacing the intent and entities dirs) so that it can become more flexible
 
-def generate_dataset(samples_per_intent=512, duplicates=False):
+def generate_dataset(dataset_path, samples_per_intent=512, duplicates=False):
     """
         Generate the dataset from .entity and .intent files in the dataset directory.
 
         Inputs:
+         - dataset_path: path to the train.pkl output
          - samples_per_intent: number of samples to generate per intent
          - duplicates: allow duplicate prompts to fill the [samples_per_intent] quota
         
@@ -25,13 +25,13 @@ def generate_dataset(samples_per_intent=512, duplicates=False):
          - train.pkl: Full training dataset
     """
 
-    if not os.path.isdir(DATASET_PATH):
+    if not os.path.isdir(dataset_path):
         print('Dataset directory does not exist')
         return
 
     # load data from file
-    entity_files = glob.glob(f'{DATASET_PATH}/*/entities/*.entity', recursive=True)
-    intent_files = glob.glob(f'{DATASET_PATH}/*/intents/*.intent', recursive=True)
+    entity_files = glob.glob(f'{dataset_path}/*/entities/*.entity', recursive=True)
+    intent_files = glob.glob(f'{dataset_path}/*/intents/*.intent', recursive=True)
 
     entities = {}
     entity_id = 1
@@ -123,12 +123,12 @@ def generate_dataset(samples_per_intent=512, duplicates=False):
 
     # save the dataset
     df = pd.DataFrame(dataset)
-    df.to_pickle('dataset/train.pkl')
-    df.to_csv('dataset/train.csv')
-    pd.DataFrame(dataset[::200]).to_csv('dataset/sample.csv', index=False)
+    df.to_pickle(f'{dataset_path}/train.pkl')
+    df.to_csv(f'{dataset_path}/train.csv')
+    pd.DataFrame(dataset[::200]).to_csv(f'{dataset_path}/sample.csv', index=False)
 
-    with open('dataset/intent_labels.json', 'w') as f:
+    with open(f'{dataset_path}/intent_labels.json', 'w') as f:
         json.dump(intent_labels, f)
     
-    with open('dataset/entity_labels.json', 'w') as f:
+    with open(f'{dataset_path}/entity_labels.json', 'w') as f:
         json.dump(entity_labels, f)

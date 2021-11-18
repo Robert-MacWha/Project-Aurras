@@ -1,5 +1,0 @@
-{prepend_request} Make me a new playlist
-{prepend_request} Create a new playlist named {playlist}
-{prepend_request} May a playlist called {playlist}
-{prepend_request} Set up a new playlist
-{prepend_request} Create a {playlist} playlist

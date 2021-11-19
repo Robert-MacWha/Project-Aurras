@@ -15,5 +15,17 @@ Implement Aurras' functions
  - Load a model
  - Respond to a prompt
  - Respond to a conversation
- - Parse speech
- - Generate speech
+* - Parse speech
+* - Generate speech
+Implement Plugins
+ - Using Google
+ - Wolfrem Alpha
+ - Music
+ - Videos
+ - Notion
+Build a setup.py script
+Build test scripts
+Build a sample run script
+Create documentation
+Add logging to all core & integration scripts for better warning and error management
+ - standardize

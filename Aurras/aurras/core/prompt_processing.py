@@ -1,22 +1,23 @@
 import numpy as np
 
-def encode(tokenizer, texts, texts_labels, max_len=128):
+def encode(tokenizer: object, texts: list, texts_labels: list, max_len: int) -> tuple:
     """
         Encode a sequence of strings using the provided tokenizer.
         Returns an encoded ID and an attention mask
 
         Inputs: 
-         - tokenizer: Tokenizer object from the PreTrainedTokenizer class
-         - texts: Sequence of strings to be tokenized
-         - texts_labels: Word-level lables for the text sequences
-         - max_len: Integer controling the maximum number of tokens to tokenize
+         - tokenizer:    tokenizer object from the PreTrainedTokenizer class
+         - texts:        sequence of strings to be tokenized
+         - texts_labels: word-level lables for the text sequences
+         - max_len:      integer controling the maximum number of tokens to tokenize
         
         Outputs:
-         - input_ids: Sequence of encoded tokens as a np array
-         - attention_mask: Sequence of attention masks as a np array
+         - input_ids:      sequence of encoded tokens as a np array
+         - attention_mask: sequence of attention masks as a np array
+         - labels:         sequence of token-level labels as a np array
     """
 
-    input = [tokenize_and_preserve_labels(tokenizer, text, text_labels, max_len=max_len) for text, text_labels in zip(texts, texts_labels)]
+    input = [__tokenize_and_preserve_labels(tokenizer, text, text_labels, max_len=max_len) for text, text_labels in zip(texts, texts_labels)]
 
     input_ids       = np.array([i[0] for i in input])
     attention_masks = np.array([i[1] for i in input])
@@ -24,19 +25,19 @@ def encode(tokenizer, texts, texts_labels, max_len=128):
     
     return input_ids, attention_masks, labels
 
-def encode_without_labels(tokenizer, texts, max_len=128):
+def encode_without_labels(tokenizer: object, texts: list, max_len: int) -> tuple:
     """
         Encode a sequence of strings using the provided tokenizer.
         Returns an encoded ID and an attention mask
 
         Inputs: 
-         - tokenizer: Tokenizer object from the PreTrainedTokenizer class
-         - texts: Sequence of strings to be tokenized
-         - max_len: Integer controling the maximum number of tokens to tokenize
+         - tokenizer: tokenizer object from the PreTrainedTokenizer class
+         - texts:     sequence of strings to be tokenized
+         - max_len:   integer controling the maximum number of tokens to tokenize
         
         Outputs:
-         - input_ids: Sequence of encoded tokens as a np array
-         - attention_mask: Sequence of attention masks as a np array
+         - input_ids:      sequence of encoded tokens as a np array
+         - attention_mask: sequence of attention masks as a np array
     """
 
     input = tokenizer(
@@ -51,7 +52,21 @@ def encode_without_labels(tokenizer, texts, max_len=128):
 
     return input['input_ids'], input['attention_mask']
 
-def tokenize_and_preserve_labels(tokenizer, text, text_labels, max_len=128):
+def __tokenize_and_preserve_labels(tokenizer: object, text: str, text_labels: list, max_len: int) -> tuple:
+    """
+        Tokenize a sequence while preserving word-level labels
+
+        Inputs:
+         - tokenizer:   tokenizer object from huggingface
+         - text:        prompt
+         - text_labels: list of labels for each word in the prompt
+         - max_len:     maximum length of a prompt after tokenization
+
+        Outputs:
+         - token_ids:      list token IDs for the input text
+         - attention_mask: attention mask for the input text
+         - labels:         list of token-level labels
+    """
 
     tokenized_sequence = []
     labels = []

@@ -8,8 +8,13 @@ class PluginManager:
 
     plugins = []
 
-    def __init__(self, plugin_path):
-        """ Load all modules into an array so they can be used """
+    def __init__(self, plugin_path: str):
+        """ 
+            Load all modules into an array so they can be used when required
+
+            Inputs:
+             - plugin_path: Local path to the plugins directory
+        """
         if not os.path.isdir(plugin_path):
             logging.error('Dataset directory does not exist')
             return
@@ -31,12 +36,12 @@ class PluginManager:
 
             self.plugins.append(plugin)
 
-    def generate_response(self, intent, entities):
+    def generate_response(self, intent: str, entities: dict) -> dict:
         """
             Execute all plugins
 
             Inputs:
-            - intent: stringified intent provided by the NLP module
+            - intent:   stringified intent provided by the NLP module
             - entities: dictionary of stringified entities provided by the NLP module
 
             Outputs:

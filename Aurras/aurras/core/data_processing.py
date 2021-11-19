@@ -6,20 +6,19 @@ import glob
 import pandas as pd
 from pathlib import Path
 
-def generate_dataset(dataset_path, samples_per_intent=512, duplicates=False):
+def generate_dataset(dataset_path: str, samples_per_intent: int = 512, duplicates: bool = False):
     """
         Generate the dataset from .entity and .intent files in the dataset directory.
 
         Inputs:
-         - dataset_path: path to the train.pkl output
+         - dataset_path:       path to the train.pkl output
          - samples_per_intent: number of samples to generate per intent
-         - duplicates: allow duplicate prompts to fill the [samples_per_intent] quota
+         - duplicates:         allow duplicate prompts to fill the [samples_per_intent] quota
         
         Outputs:
          - entity_labels.json: JSON mapping to convert entity IDs into the plain-text entities
          - intent_labels.json: JSON mapping to convert intent IDs into the plain-text intents
-         - samples.csv: Sample of the dataset, used for debugging
-         - train.pkl: Full training dataset
+         - train.pkl:          full training dataset
     """
 
     if not os.path.isdir(dataset_path):
@@ -121,8 +120,6 @@ def generate_dataset(dataset_path, samples_per_intent=512, duplicates=False):
     # save the dataset
     df = pd.DataFrame(dataset)
     df.to_pickle(f'{dataset_path}/train.pkl')
-    df.to_csv(f'{dataset_path}/train.csv')
-    pd.DataFrame(dataset[::200]).to_csv(f'{dataset_path}/sample.csv', index=False)
 
     with open(f'{dataset_path}/intent_labels.json', 'w') as f:
         json.dump(intent_labels, f)

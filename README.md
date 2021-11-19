@@ -34,4 +34,4 @@ Interactions are programs included with Aurras that allow plugins to interact wi
 
 My goal for project Aurras is to build a virtual assistant framework which I can use as a jumping-off point for future projects.  This means that interactions & natural language processing systems will be completely fleshed out while skills will likely remain lacking in quality, at least in the main branch.
 
-Code & File structure follows 
+Code & File structure follows https://docs.python-guide.org/writing/structure/

@@ -13,3 +13,7 @@ Plugins are used to add intent-specific functionality to Aurras.  Handeled by th
 
 ## Project Board
 https://github.com/Robert-MacWha/Project-Aurras/projects/1
+
+## Sample of interaction
+#### From top to bottom: Intent classification, Intent classification & Entity extraction (x2), Plugin integration
+![Sample image](https://github.com/Robert-MacWha/Project-Aurras/blob/main/docs/Interactions-Sample.PNG?raw=true)

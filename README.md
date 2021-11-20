@@ -1,37 +1,12 @@
 # Project Aurras
-Project Aurras is a virtual assistant I am building using intent classification and entity extraction.  This project's goals are to
-1. Be able to understand direct and contextual commands
-2. Be able to hold natural conversation
-3. Be able to interact with extral APIs (IE turning on lights)
+Project Aurras is a NLP framework designed to parse natural language inputs into structured data.  Aurras is designed to act as a base for future NLP projects and thus focuses on modularity and customizability.  To help accomplish these goals Aurras uses a combination of core systems, interactions, and plugins.
 
-Here's a board showing all of the features I have planned for aurras:
+## Overview
+### Core
+At its core Aurras is a wrapper for a trainable natural language processing model.  Aurras' core model is responsible for intent classification and entity extraction and is built on top of HuggingFace's pre-trained [distilbert](https://huggingface.co/transformers/model_doc/distilbert.html) model.  Due to its flexible nature, Aurras can be re-trained for many different tasks by simply changing the dataset.
 
-[Public Micro Mindmap](https://miro.com/app/board/o9J_ltb8idc=/?invite_link_id=397704406891)
+### Integrations
+Aurras' integrations handel interactions between its core systems and external or custom APIs.  Integrations are used to increase modularity which means that custom systems can easily be added to Aurras without interfering with the core.  Integrations will generally be used as a wrapper for talking to external programs, such as Google or Notion.  Because of this they should be made to easily work with plugins.
 
-And here's a notion board used to keep track of features:
-
-[Public notion page](https://www.notion.so/Project-Aurras-4a0a0059519f47769a94247117a41c50)
-
-I've also written two articles on the topic for medium:
-
-- [Building a personal virtual assistant - Part 1](https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-2-afb26c2a3b5b)
-- [Building a personal virtual assistant - Part 2](https://medium.com/nerd-for-tech/building-a-personal-ai-assistant-part-1-b73974f80c1)
-
-## Features
-
-### Natural language processing
-As a personal virtual assistant, Aurras should be able to understand a given natural language prompt.  This is accomplished using a fine-tuned branch of [distilbert-base-uncased](https://huggingface.co/distilbert-base-uncased) which was trained to extract intents and entities.  Intents tell Aurras what you want to accomplish with a given sentence, and entities give her information to help fufill the intent.
-
-### Skills
-Once natural language has been processed, the intent and entities are given to a plugin which (a) executes commands and (b) returns a response.  More nuanced responses are planned, but at the moment plugins can only respond with a single string output.  
-
-An example skill count be a weather API which responds to the get_weather intent.  This api might look up the weather and return it in plain text.  It might also have a special case if a datetime entitiy is located, where it returns the weather for the provided date instead of the current date.  More complex skills require more complex interactions, but fundementally they should allways be self-contained plugins.
-
-### Interactions
-Interactions are programs included with Aurras that allow plugins to interact with more complex external APIs.  An example of this might be the duckling API which is used to convert natural language into concrete measures.  Instead of each plugin handeling duckling by itself, all traffic is routed through the duckling interaction manager which significantly decreases overhead.
-
-## Goals
-
-My goal for project Aurras is to build a virtual assistant framework which I can use as a jumping-off point for future projects.  This means that interactions & natural language processing systems will be completely fleshed out while skills will likely remain lacking in quality, at least in the main branch.
-
-Code & File structure follows https://docs.python-guide.org/writing/structure/
+### Plugins
+Plugins are used to add intent-specific functionality to Aurras.  Handeled by the plugins integration, they act as flexible modules that can interact with other plugins or integrations in order to create intent and entity-specific responses.

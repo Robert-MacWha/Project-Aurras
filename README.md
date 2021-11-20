@@ -8,12 +8,12 @@ At its core Aurras is a wrapper for a trainable natural language processing mode
 ### Integrations
 Aurras' integrations handel interactions between its core systems and external or custom APIs.  Integrations are used to increase modularity which means that custom systems can easily be added to Aurras without interfering with the core.  Integrations will generally be used as a wrapper for talking to external programs, such as Google or Notion.  Because of this they should be made to easily work with plugins.
 
-Currently only the plugin management integration exists.  However, integrations for google, notion, wolfrem alpha and wikipedia are planned.
+Currently only the **plugin management** integration exists.  However, integrations for google, notion, wolfrem alpha and wikipedia are planned.
 
 ### Plugins
 Plugins are used to add intent-specific functionality to Aurras.  Handeled by the plugins integration, they act as flexible modules that can interact with other plugins or integrations in order to create intent and entity-specific responses.
 
-Currently plugins exist for the date, time, and weather.  However, plugins for each default intent are planned.
+Currently plugins exist for the **date, time, and weather**.  However, plugins for each default intent are planned.
 
 ## Project Board
 https://github.com/Robert-MacWha/Project-Aurras/projects/1

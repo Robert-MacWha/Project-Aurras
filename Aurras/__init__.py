@@ -9,4 +9,4 @@ logging.basicConfig(filename="logfile.log",
                     format='%(asctime)s %(message)s',
                     filemode='w')
 
-from .aurras import *
+from .aurras import Aurras

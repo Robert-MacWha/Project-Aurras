@@ -29,3 +29,7 @@ Build a sample run script
 Create documentation
 Add logging to all core & integration scripts for better warning and error management
  - standardize
+Create a response object to handel more complex responses
+ - thing to say
+ - questions to ask
+ - thing to do (should interactions with integrations be managed by plugins or by Aurras?)

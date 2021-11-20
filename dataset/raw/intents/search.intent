@@ -1,0 +1,6 @@
+{prepend_request} tell me {search_query}
+{prepend_request} google {search_query} for me please
+{search_query}
+{prepend_request} find out {search_query}
+{prepend_request} search google for {search_query}
+{prepend_request} search for {search_query}

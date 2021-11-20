@@ -146,21 +146,22 @@ class Model:
 
         self.model.save_weights(model_path)
 
-    def classify(self, text: str) -> object:
+    def classify(self, text: str, max_len: int) -> object:
         """
             Classify a single text prompt
 
             Inputs:
-            - text: String text prompt to classify
+             - text: prompt to classify
+             - max_len: encoded length of a prompt
 
             Outputs:
-            - info: json object containing decoded predictions (entities & intents)
+             - info: json object containing decoded predictions (entities & intents)
         """
 
-        input = encode_without_labels(self.tokenizer, text)
+        input = encode_without_labels(self.tokenizer, text, max_len)
         model_output = self.model(input)
 
-        info = self._decode_prediction(input[0][0], model_output)
+        info = self.__decode_prediction(input[0][0], model_output)
         
         return info
 

@@ -1,0 +1,3 @@
+{prepend_request} cross off my {todo}
+{prepend_request} I've finished {todo}
+{prepend_request} delete my {todo} todo

@@ -1,0 +1,3 @@
+2021-11-19 23:36:47,120 From C:\Users\trebo\miniconda3\envs\aurras\lib\site-packages\tensorflow\python\ops\array_ops.py:5043: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
+Instructions for updating:
+The `validate_indices` argument has no effect. Indices are always validated on CPU and never validated on GPU.

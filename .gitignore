@@ -1,3 +1,5 @@
 /_aurras
-/dataset
 /Aurras/model
+/dataset/train.pkl
+/Aurras/core/model
+/Aurras/core/__pycache__

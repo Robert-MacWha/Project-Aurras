@@ -6,7 +6,7 @@ import glob
 import pandas as pd
 from pathlib import Path
 
-def generate_dataset(dataset_path: str, samples_per_intent: int = 512, duplicates: bool = False):
+def generate_dataset(dataset_path: str, samples_per_intent: int, duplicates: bool):
     """
         Generate the dataset from .entity and .intent files in the dataset directory.
 

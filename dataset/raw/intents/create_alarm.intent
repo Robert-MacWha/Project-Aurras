@@ -1,0 +1,9 @@
+{prepend_request} create an timer for {amount_of_time}
+{prepend_request} set a {amount_of_time} alarm
+{prepend_request} make me a new alarm for {amount_of_time}
+{prepend_request} setup a new {amount_of_time} timer
+{prepend_request} create a new alarm
+{prepend_request} make me an alarm
+{prepend_request} make an alarm that will end at {datetime}
+{prepend_request} set an alarm that ends at {datetime}
+{prepend_request} set an alarm for {datetime}

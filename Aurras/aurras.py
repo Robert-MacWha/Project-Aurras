@@ -1,8 +1,8 @@
-from .aurras.core.model import Model
-from .aurras.core.data_processing import generate_dataset
+from .core.model import Model
+from .core.data_processing import generate_dataset
 
 # interactions
-from .aurras.integrations.plugins import PluginManager
+from .integrations.plugins import PluginManager
 
 from .config import Config
 
@@ -37,30 +37,43 @@ class Aurras:
         self.nlp = Model(intent_label_path, entity_label_path, Config.PROMPT_PADDING)
         self.nlp.build_model(Config.MODEL_NAME)
         self.nlp.train(dataset_path, epochs=Config.EPOCHS)
-        self.nlp.save_model('model/pretrained')
+        self.nlp.save_model(Config.PRETRAINED_PATH)
 
     def build_dataset(self):
         """ Build a dataset based on the provided intents & entities """
         print('Generating a dataset...')
 
-        generate_dataset(Config.DATASET_PATH)
+        generate_dataset(Config.DATASET_PATH, Config.SAMPLES_PER_INTENT, Config.ALLOW_DUPLICATE_SAMPLES)
 
     #* Interactions
-    def ask(self, prompt: str) -> object:
+    def get_classification(self, prompt: str) -> dict:
+        """
+            Get the classification of a single prompt
+
+            Outputs:
+             - classification: Classification json containing intent and extracted entities
+        """
+
+        classification = self.nlp.classify(prompt)
+
+        return classification
+
+    def ask(self, prompt: str) -> dict:
         """
             Pass a single prompt to Aurras
 
             Outputs:
-             - response (json): Response object
+             - response: Response json object
         """
         
-        classification = self.nlp.classify(prompt)
+        classification = self.nlp.classify(prompt, Config.PROMPT_PADDING)
         response = self.plugins.generate_response(classification['intent'], classification['entities'])
 
         return response
 
     def interact(self):
         """ Start a conversation with Aurras - text based """
+        print('\n\n')
         print('Live interactive console loaded')
 
         while True:
@@ -71,9 +84,9 @@ class Aurras:
             if (prompt.lower() == 'exit'): # exit case
                 break
 
-            classification = self.nlp.classify(prompt)
-            response = self.plugins.generate_response(classification['intent'], classification['entities'])
+            response = self.ask(prompt)
             print(response['response'])
+            print('')
 
     def parse_speech(self, speech):
         """ 

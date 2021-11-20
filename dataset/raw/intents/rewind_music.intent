@@ -1,0 +1,5 @@
+{prepend_request} go back by {amount_of_time}
+{prepend_request} rewind by {amount_of_time}
+{prepend_request} rewind this song by {amount_of_time}
+{prepend_request} go back by {amount_of_time} on this song
+{prepend_request} rewind this song by {amount_of_time}

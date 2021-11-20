@@ -10,3 +10,6 @@ Aurras' integrations handel interactions between its core systems and external o
 
 ### Plugins
 Plugins are used to add intent-specific functionality to Aurras.  Handeled by the plugins integration, they act as flexible modules that can interact with other plugins or integrations in order to create intent and entity-specific responses.
+
+## Project Board
+https://github.com/Robert-MacWha/Project-Aurras/projects/1

@@ -7,6 +7,37 @@ Project Aurras is a NLP framework designed to parse natural language inputs into
 ### Core
 At its core Aurras is a wrapper for a trainable natural language processing model.  Aurras' core model is responsible for intent classification and entity extraction and is built on top of HuggingFace's pre-trained [distilbert](https://huggingface.co/transformers/model_doc/distilbert.html) model.  Due to its flexible nature, Aurras can be re-trained for many different tasks by simply changing the dataset.
 
+Currently supported intents include:
+ - Music playlists manipulation
+ - Alarm manipulation
+ - Get date
+ - Get time
+ - Get weather
+ - Todo system
+ - Arbitrary searching
+ - Start
+ - Stop
+ - Media controls
+ - Natural language conversation
+
+Currently supported entities include:
+ - Book
+ - Movie
+ - Song
+ - Amount of time
+ - Datetime
+ - Distance
+ - Location
+ - Math expression
+ - Number
+ - Ordinal
+ - Person
+ - Playlist
+ - Quantity
+ - Todo
+ - Topic
+ - Category
+
 ### Integrations
 Aurras' integrations handel interactions between its core systems and external or custom APIs.  Integrations are used to increase modularity which means that custom systems can easily be added to Aurras without interfering with the core.  Integrations will generally be used as a wrapper for talking to external programs, such as Google or Notion.  Because of this they should be made to easily work with plugins.
 

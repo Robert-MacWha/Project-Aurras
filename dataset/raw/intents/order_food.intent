@@ -1,0 +1,5 @@
+{prepend_request} Order me a {food}
+{prepend_request} get me a {food} from {establishment}
+{prepend_request} order {food}
+{prepend_request} ask {establishment} for some {food} 
+{prepend_request} get a {food}

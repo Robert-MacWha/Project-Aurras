@@ -1,0 +1,5 @@
+{prepend_request} book me a flight from {country} to {country}
+{prepend_request} setup a flight to {country}
+{prepend_request} book a flight to {country}
+{prepend_request} book me a flight to {country} on {date}
+{prepend_request} setup a flight from {country} to {country} on {date}

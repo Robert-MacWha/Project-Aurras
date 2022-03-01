@@ -1,0 +1,5 @@
+{prepend_request} buy me a {item}
+{prepend_request} buy a {item} from {establishment}
+{prepend_request} order a {item}
+{prepend_request} go onto {establishment} and get me an {item}
+order {item} from {establishment} please

@@ -1,0 +1,5 @@
+{prepend_request} translate {phrase} into {language}
+What's {phrase} in {language}
+{prepend_request} tell me how to say {phrase} in {language}
+How do you say {phrase} in {language}
+How does {language} say {phrase}
